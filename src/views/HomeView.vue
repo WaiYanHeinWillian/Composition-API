@@ -1,31 +1,28 @@
 <template>
   <div class="home">
-    <div v-for="name in filteredname" :key="name">
-      <h1>{{name}}</h1>
-    </div>
-    <input type="text" v-model="search">
-    <p>typing is - {{search}}</p>
+    <PostList :posts="posts"></PostList>
+    
   </div>
 </template>
 
 <script>
-import { computed,ref } from 'vue'
+import { ref } from 'vue';
 
 
 
+
+import PostList from '../components/PostList'
 export default {
+  components: { PostList },
   setup(){
-
-    let names=ref(["kyawkyaw","zawzaw","marmar","tharthar"]);
-    let search=ref("");
-
-    let filteredname=computed(()=>{
-      return names.value.filter(lopname=>{
-        return lopname.includes(search.value)
-      })
-    })
-
-    return {names,search,filteredname}
-  }  
+    let posts=ref([
+      {title:"post title1",body:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit culpa iure itaque ipsa aperiam numquam expedita obcaecati vel animi consequuntur, aliquam fuga libero eaque porro a exercitationem sunt voluptas ea! Dolor quo dolorem necessitatibus laborum, voluptate mollitia vero provident nobis corporis. Optio blanditiis fugiat suscipit necessitatibus soluta. Neque, distinctio. Sequi corrupti quam consectetur. Illo unde, doloribus laborum obcaecati aliquam molestiae laboriosam necessitatibus error autem aspernatur dolore similique minima in voluptate qui enim nesciunt sed repellat ex assumenda ad, deleniti quaerat? Dicta, quasi voluptate illo soluta delectus porro magnam aperiam non tempora ratione repellat nisi, explicabo incidunt temporibus tempore harum deserunt.",id:1},
+      {title:"post title2",body:"lorem ipsum",id:2},
+    ]);
+    return {posts};
+  } 
 }
 </script>
+
+
+
