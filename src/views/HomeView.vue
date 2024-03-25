@@ -1,29 +1,51 @@
 <template>
   <div class="home">
     <h1>Home Page</h1>
-    <p>Hello {{name}} and age is {{age}}</p>
+    <!-- <p>{{personOne.name}}</p>
+    <p>{{personOne.age}}</p> -->
+    <button @click="changeOne">ChangePersonOne</button>
+    <p>{{personOne}}</p>
 
-    <input type="text" v-model="name">
-    <button @click="handleClick">Click</button>
-    <button v-on:click="age++">Add Age</button>
+    <!-- <p>{{personTwo.name}}</p>
+    <p>{{personTwo.age}}</p> -->
+    <button @click="changeTwo">ChangePersonTwo</button>
+    <p>{{personTwo}}</p>
+    
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 
 
 export default {
   setup(){
-    let name=ref("wai yan hein");
-    let age=ref(20);
-    let handleClick=()=>{
-      // console.log(name.value)
-      name.value="kyaw kyaw"
-    };
-    return {name,age,handleClick}
+    // let personOne=ref({name:"TunTun",age:30});
+    // let changeOne=()=>{
+    //   personOne.value.name="SuSu";
+    // };
+
+    // let personTwo=reactive({name:"KyawKyaw",age:50});
+    // let changeTwo=()=>{
+    //   personTwo.age=100;    }
+    // return {personOne,changeOne,personTwo,changeTwo}
+
+
+    let personOne=ref("MgMg");
+    let personTwo=reactive(1000);
+    let changeOne=()=>{
+      personOne.value="KoKo";
+    }
+
+    let changeTwo=()=>{
+      personTwo=20
+    }
+
+    return {personOne,changeOne,changeTwo}
     
-  },
+    
+
+  }
   
 }
 </script>
