@@ -9,13 +9,14 @@
       </div>
 
       <div v-else>
-        LOADING.....
+        <Spinner></Spinner>
       </div>
     
   </div>
 </template>
 
 <script>
+import Spinner from '../components/Spinner'
 import { ref } from 'vue';
 
 
@@ -24,7 +25,8 @@ import { ref } from 'vue';
 import PostList from '../components/PostList'
 import getPosts from '../composables/getPosts'
 export default {
-  components: { PostList },
+  components: {
+    Spinner, PostList },
   setup(){
     let {posts,error,load}=getPosts();
     load();    
