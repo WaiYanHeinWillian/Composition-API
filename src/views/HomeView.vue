@@ -22,28 +22,12 @@ import { ref } from 'vue';
 
 
 import PostList from '../components/PostList'
+import getPosts from '../composables/getPosts'
 export default {
   components: { PostList },
   setup(){
-    let posts=ref([]);
-    let error=ref("");
-    let load=async()=>{
-     
-     try{
-      let response= await fetch('http://localhost:3000/posts')
-      if(response.status===404){
-        throw new Error('Not Found URL')
-      }
-      let datas= await response.json()
-      posts.value=datas
-     }catch(err){
-        // console.log(err.message)
-        error.value=err.message
-     }
-     
-    }
-    load();
-    
+    let {posts,error,load}=getPosts();
+    load();    
     return {posts,error};
   } 
 }
