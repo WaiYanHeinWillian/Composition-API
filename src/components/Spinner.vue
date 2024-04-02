@@ -16,9 +16,9 @@ export default {
     border-radius: 50%;
     margin: 30px auto;
     border-top-color: blue;
-    animation: spin 1s infinite;
+    animation: spins 1s infinite;
 }
-@keyframes spin{
+@keyframes spins{
     to{transform: rotate(360deg);}
 }
 </style>
