@@ -1,22 +1,7 @@
 {
   "posts": [
     {
-      "title": "post title 1",
-      "id": "1",
-      "body": "lorem ipsum"
-    },
-    {
-      "title": "post title 2",
-      "id": "2",
-      "body": "lorem ipsum"
-    },
-    {
-      "title": "post title 3",
-      "id": "3",
-      "body": "lorem ipsum"
-    },
-    {
-      "id": "8007",
+      "id": "4",
       "title": "title 4",
       "body": "something is making",
       "tags": [
@@ -25,12 +10,30 @@
       ]
     },
     {
-      "id": "7db5",
+      "id": "5",
       "title": "Title5",
       "body": "Body 5",
       "tags": [
         "java",
         "python"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Title 6",
+      "body": "Body 6",
+      "tags": [
+        "javascript",
+        "vuejs"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Title 7",
+      "body": "Body 7",
+      "tags": [
+        "vuejs",
+        "laravel"
       ]
     }
   ]
