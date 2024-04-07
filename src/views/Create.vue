@@ -55,8 +55,8 @@ export default {
                             body:body.value,
                             tags:tags.value
                         }
-            let res=await db.collection('posts').add(newPost)
-            console.log(res)
+           await db.collection('posts').add(newPost)
+            
             router.push('/')
         }     
 
