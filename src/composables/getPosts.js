@@ -8,7 +8,7 @@ let getPosts=()=>{
      
      try{
     
-        let res=await db.collection("posts").get();
+        let res=await db.collection("posts").orderBy('created_at','desc').get();
         posts.value=res.docs.map((doc)=>{
             // console.log(doc.data())
                 // console.log(doc.id)
